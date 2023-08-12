@@ -11,10 +11,13 @@ require("dotenv").config({
 })
 
 const strapiConfig = {
-  apiURL: process.env.STRAPI_API_URL,
+  apiURL: process.env.STRAPI_API_URL || "http://localhost:1337",
   accessToken: process.env.STRAPI_TOKEN,
-  collectionTypes: ["jobs"],
-  //singleTypes: [],
+  collectionTypes: [
+    {
+      singularName: "job",
+    },
+  ],
   //remoteFileHeaders: {
   /**
    * Customized request headers
@@ -29,9 +32,9 @@ const strapiConfig = {
 module.exports = {
   siteMetadata: {
     title: "WebDev Portfolio",
-    description: "This is WebDev Portfolio Site",
-    author: "@webdev",
-    twitterUsername: "@john_smilga",
+    description: "Marcelo Brito Portfolio Site",
+    author: "@marcelobrito",
+    twitterUsername: "@_marcelo_brito",
     image: "/twitter-img.png",
     siteUrl: "https://testing-strapi-gatsby-build.netlify.app",
   },
