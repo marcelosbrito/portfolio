@@ -17,6 +17,9 @@ const strapiConfig = {
     {
       singularName: "job",
     },
+    {
+      singularName: "project",
+    },
   ],
   //remoteFileHeaders: {
   /**
