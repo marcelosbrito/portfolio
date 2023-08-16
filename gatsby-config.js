@@ -20,6 +20,9 @@ const strapiConfig = {
     {
       singularName: "project",
     },
+    {
+      singularName: "blog",
+    },
   ],
   //remoteFileHeaders: {
   /**
