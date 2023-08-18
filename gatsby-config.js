@@ -24,6 +24,7 @@ const strapiConfig = {
       singularName: "blog",
     },
   ],
+  singleTypes: ["about"],
   //remoteFileHeaders: {
   /**
    * Customized request headers
@@ -60,19 +61,19 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
     },
-    // {
-    //   resolve: `gatsby-plugin-webfonts`,
-    //   options: {
-    //     fonts: {
-    //       google: [
-    //         {
-    //           family: "Roboto",
-    //           variants: ["400", "700"],
-    //         },
-    //         { family: "Open Sans" },
-    //       ],
-    //     },
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Roboto",
+              variants: ["400", "700"],
+            },
+            { family: "Open Sans" },
+          ],
+        },
+      },
+    },
   ],
 }
