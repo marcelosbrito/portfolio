@@ -6,6 +6,7 @@ import Services from "../components/Services"
 import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
+import SEO from "../components/SEO"
 
 export default function Home({ data }) {
   const {
@@ -22,6 +23,10 @@ export default function Home({ data }) {
     </Layout>
   )
 }
+
+export const Head = () => (
+  <SEO title="Home" description="This is our Homepage" />
+)
 
 export const query = graphql`
   query {

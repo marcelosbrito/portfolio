@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
+import SEO from "../components/SEO"
 
 const ComponentName = ({ data }) => {
   const { content } = data.blog
@@ -21,6 +22,11 @@ const ComponentName = ({ data }) => {
   )
 }
 
+export const Head = ({ data }) => {
+  const { title, desc } = data.blog
+  return <SEO title={title} description={desc} />
+}
+
 export const query = graphql`
   query GetSingleBlog($slug: String) {
     blog: strapiBlog(slug: { eq: $slug }) {
@@ -29,6 +35,8 @@ export const query = graphql`
           content
         }
       }
+      title
+      desc
     }
   }
 `

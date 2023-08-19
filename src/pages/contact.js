@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 
 const contact = () => {
   return (
@@ -37,5 +38,7 @@ const contact = () => {
     </Layout>
   )
 }
+
+export const Head = () => <SEO title="Contact" description="Contact me" />
 
 export default contact

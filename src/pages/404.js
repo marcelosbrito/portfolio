@@ -18,4 +18,8 @@ const Error = () => {
   )
 }
 
+export const Head = () => (
+  <SEO title="Error" description="This is Error 404 page - not found" />
+)
+
 export default Error

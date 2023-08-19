@@ -38,17 +38,16 @@ const strapiConfig = {
 
 module.exports = {
   siteMetadata: {
-    title: "WebDev Portfolio",
+    title: "Marcelo Brito",
     description: "Marcelo Brito Portfolio Site",
     author: "@marcelobrito",
     twitterUsername: "@_marcelo_brito",
     image: "/twitter-img.png",
-    siteUrl: "https://testing-strapi-gatsby-build.netlify.app",
+    siteUrl: "https://marcelobritodev.netlify.app",
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
