@@ -30,7 +30,7 @@
     "react-markdown": "^8.0.7"
   },
   "devDependencies": {
-    "prettier": "3.0.1"
+    "prettier": "3.0.2"
   },
   "repository": {
     "type": "git",
