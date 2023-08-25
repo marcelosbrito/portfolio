@@ -17,7 +17,7 @@ export default function Home({ data }) {
   return (
     <Layout>
       <Hero />
-      {/* <Services /> */}
+      {/* <Services /> In case I became a freelancer*/}
       <Skills />
       <Jobs />
       <Projects projects={projects} title="featured projects" showLink />

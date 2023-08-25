@@ -1162,7 +1162,7 @@ Blog Template
 }
 
 .blog-template blockquote {
-  background: var(--clr-primary-9);
+  background: var(--clr-grey-8);
   border-radius: var(--radius);
   padding: 1rem;
   line-height: 2;
@@ -1177,9 +1177,11 @@ Blog Template
   border-radius: var(--radius);
 }
 .blog-template img {
-  width: 35rem;
-  height: 25rem;
+  width: 30rem;
+  height: 20rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: var(--dark-shadow);
+  border-radius: var(--radius);
 }
