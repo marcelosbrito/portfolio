@@ -14,7 +14,7 @@ const ComponentName = ({ data }) => {
             <ReactMarkdown children={content.data.content} />
           </article>
           <Link to="/blog" className="btn center-btn">
-            blog
+            back
           </Link>
         </div>
       </section>

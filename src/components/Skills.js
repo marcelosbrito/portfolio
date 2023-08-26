@@ -10,6 +10,7 @@ const query = graphql`
     about: allStrapiAbout {
       nodes {
         title
+        subtitle
         info
         stack {
           id
@@ -34,7 +35,7 @@ const Skills = () => {
     about: { nodes: about },
   } = data
 
-  const { title, image, info, stack } = about[0]
+  const { title, subtitle, image, info, stack } = about[0]
 
   return (
     <section className="about-page">
@@ -52,6 +53,7 @@ const Skills = () => {
               return <span key={item.id}>{item.title}</span>
             })}
           </div>
+          <p className="about-subtitle">{subtitle}</p>
           <p>{info}</p>
           <div>
             <Link to="/about" className="about-link">
