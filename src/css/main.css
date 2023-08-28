@@ -41,12 +41,12 @@ Variables
   --clr-red-3: hsla(8, 100%, 68%, 1);
   --clr-red-4: hsla(8, 75%, 61%, 1);
   --clr-white: #fff;
-  --clr-white-2: rgba(255, 255, 255, .85);
+  --clr-white-2: rgba(255, 255, 255, .95);
   --ff-primary: "Montserrat", sans-serif;
   --ff-primary-2: "Montserrat-Thin", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
-  --spacing: 0.2rem;
+  --spacing: 0.15rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -1188,4 +1188,46 @@ Blog Template
   margin-right: auto;
   box-shadow: var(--dark-shadow);
   border-radius: var(--radius);
+}
+
+.blog-content {
+  width: 85vw;
+  margin: 0 auto;
+  line-height: 2;
+}
+
+.blog-content h2{
+  font-size: 2.25rem;
+  text-align: left;
+  letter-spacing: 0.075rem;
+  text-transform: initial;
+  font-weight: 200;
+  color: black;
+}
+.blog-content h3{
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: 0.05rem;
+  text-transform: initial;
+  margin-bottom: 1.5rem;
+  margin-top: 2.75rem;
+  font-weight: 900;
+  color: black;
+}
+
+.blog-content p {
+  font-size: 1.25rem;
+  color: black;
+}
+
+@media screen and (min-width: 992px) {
+  .blog-content {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 541px) and (max-width: 991px) {
+  .blog-content {
+    width: 75vw;
+  }
 }

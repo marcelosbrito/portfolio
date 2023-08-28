@@ -1,5 +1,7 @@
 import React from "react"
 import SocialLinks from "../constants/socialLinks"
+import { Link } from "gatsby"
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -7,7 +9,10 @@ const Footer = () => {
         <SocialLinks styleClass="footer-links"></SocialLinks>
         <h4>
           copyright&copy;{new Date().getFullYear()}
-          <span> Marcelo Brito</span> all rights reserved
+          <Link to="/">
+            <span> Marcelo Brito</span>
+          </Link>{" "}
+          all rights reserved
         </h4>
       </div>
     </footer>
