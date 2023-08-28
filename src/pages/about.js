@@ -2,34 +2,27 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Title from "../components/Title"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 import SEO from "../components/SEO"
+import ReactMarkdown from "react-markdown"
 
 const About = ({
   data: {
-    about: { nodes },
+    bio: { nodes },
   },
 }) => {
-  const { title, stack, info, image } = nodes[0]
+  const { title, content } = nodes[0]
   return (
     <Layout>
-      <section className="about-page">
-        <div className="section-center about-center">
-          {image && (
-            <GatsbyImage
-              image={getImage(image.localFile)}
-              className="about-img"
-            />
-          )}
-          <article className="about-text">
+      <section className="blog-template">
+        <div className="section-center">
+          <article className="blog-content">
             <Title title={title} />
-            <p>{info}</p>
-            <div className="about-stack">
-              {stack.map(item => {
-                return <span key={item.id}>{item.title}</span>
-              })}
-            </div>
+            <ReactMarkdown children={content.data.content} />
           </article>
+          <Link to="/contact" className="btn">
+            contact me
+          </Link>
         </div>
       </section>
     </Layout>
@@ -40,19 +33,12 @@ export const Head = () => <SEO title="About" description="About me" />
 
 export const query = graphql`
   query {
-    about: allStrapiAbout {
+    bio: allStrapiBio {
       nodes {
         title
-        info
-        stack {
-          id
-          title
-        }
-        image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
+        content {
+          data {
+            content
           }
         }
       }

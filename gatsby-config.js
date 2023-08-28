@@ -24,7 +24,7 @@ const strapiConfig = {
       singularName: "blog",
     },
   ],
-  singleTypes: ["about"],
+  singleTypes: ["about", "bio"],
   //remoteFileHeaders: {
   /**
    * Customized request headers
