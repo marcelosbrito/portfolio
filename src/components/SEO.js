@@ -23,7 +23,7 @@ const SEO = ({ title, description }) => {
     <>
       <html lang="en-US" />
       <title>{`${title} | ${siteTitle}`}</title>
-      <link id="icon" rel="icon" href="favico.png" />
+      <link id="icon" rel="icon" href="favico.ico" />
       <meta name="description" content={description || siteDesc} />
       <meta name="image" content={image} />
       {/*twitter cards */}
