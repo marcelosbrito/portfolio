@@ -25,29 +25,78 @@ const About = () => {
             <strong>
               I decided to take a different and independent path in my career.
             </strong>{" "}
-            I embarked on crafting websites with WordPress, focusing on
-            generating organic traffic through meticulously structured SEO.
+            I embarked on{" "}
+            <a
+              class="about-link"
+              href="https://web.archive.org/web/20151027174004/http://comofazerpatchwork.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              crafting websites
+            </a>{" "}
+            with WordPress, focusing on generating organic traffic through
+            meticulously structured SEO.
           </p>
           <h3>Exploring the digital world</h3>
           <p>
             As my skills grew,{" "}
-            <strong>I ventured into creating dropshipping stores</strong> on
-            both WordPress and Shopify platforms. I also dabbled in freelance
+            <strong>
+              I ventured into creating{" "}
+              <a
+                class="about-link"
+                href="https://youtu.be/tWPMtQnEbpo"
+                target="_blank"
+                rel="noreferrer"
+              >
+                dropshipping stores
+              </a>
+            </strong>{" "}
+            on both WordPress and Shopify platforms. I also dabbled in freelance
             video editing, mastering tools like Premiere and Photoshop. This
             diverse experience fueled my passion for creativity and led me to
             explore deeper into web development.
           </p>
           <p>
             I took on the challenge of{" "}
-            <strong>building an e-commerce pet shop</strong> using React,
-            harnessing the power of React Hooks (useState, useEffect, useStyle),
-            MaterialUI, and CommerceJs/Stripe backend APIs. I honed my skills in{" "}
-            <strong>client database management (CRUD)</strong> using the MERN
-            Stack—MongoDB, Express.js, React, and Node.js. I connected to
-            databases with Mongoose, styled with Bootstrap, and implemented
-            CD/CI with GitLab. In addition, I developed a{" "}
-            <strong>task list application</strong> using HTML, CSS, and
-            Javascript.
+            <strong>
+              building an e-commerce{" "}
+              <a
+                class="about-link"
+                href="https://littleones.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                pet shop
+              </a>
+            </strong>{" "}
+            using React, harnessing the power of React Hooks (useState,
+            useEffect, useStyle), MaterialUI, and CommerceJs/Stripe backend
+            APIs. I honed my skills in{" "}
+            <strong>
+              <a
+                class="about-link"
+                href="https://mern-client-panel.web.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                client database management
+              </a>{" "}
+              (CRUD)
+            </strong>{" "}
+            using the MERN Stack—MongoDB, Express.js, React, and Node.js. I
+            connected to databases with Mongoose, styled with Bootstrap, and
+            implemented CD/CI with GitLab. In addition, I developed a{" "}
+            <strong>
+              <a
+                class="about-link"
+                href="https://marcelosbrito.github.io/todo-list/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                task list application
+              </a>
+            </strong>{" "}
+            using HTML, CSS, and Javascript.
           </p>
           <h3>Leisure pursuits</h3>
           <p>
