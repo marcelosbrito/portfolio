@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "portfolio-44c8a"
+  },
+  "targets": {
+    "portfolio-44c8a": {
+      "hosting": {
+        "marcelobrito": [
+          "marcelobrito"
+        ]
+      }
+    }
+  }
+}

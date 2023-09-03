@@ -21,7 +21,7 @@
     "gatsby-plugin-sitemap": "^6.11.0",
     "gatsby-plugin-webfonts": "^2.3.2",
     "gatsby-source-filesystem": "^5.11.0",
-    "gatsby-source-strapi": "3.3.0",
+    "gatsby-source-strapi": "3.3.1",
     "gatsby-transformer-sharp": "^5.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,7 +30,7 @@
     "react-markdown": "^8.0.7"
   },
   "devDependencies": {
-    "prettier": "3.0.2"
+    "prettier": "3.0.3"
   },
   "repository": {
     "type": "git",

@@ -3,6 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
+// import img from "../assets/hero-img.png"
 
 const query = graphql`
   query {
@@ -34,7 +35,10 @@ const Hero = () => {
             </Link>
           </div>
         </article>
-        <GatsbyImage image={getImage(image.heroimg)} className="hero-img" />
+        {image && (
+          <GatsbyImage image={getImage(image.heroimg)} className="hero-img" />
+        )}
+        {/* <img src={img} width="100%" className="hero-img" /> */}
       </div>
     </header>
   )

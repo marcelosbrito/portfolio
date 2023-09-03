@@ -49,6 +49,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -66,7 +67,7 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "Roboto",
+              family: "Montserrat",
               variants: ["400", "700"],
             },
             { family: "Open Sans" },

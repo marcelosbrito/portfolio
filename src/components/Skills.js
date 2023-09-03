@@ -1,8 +1,9 @@
 import React from "react"
 import Title from "./Title"
-//import { FaAngleDoubleRight } from "react-icons/fa"
+// import { FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+// import img from "../assets/code.png"
 import { Link } from "gatsby"
 
 const query = graphql`
@@ -40,6 +41,7 @@ const Skills = () => {
   return (
     <section className="about-page">
       <div className="section-center about-center">
+        {/* <img src={img} className="about-img" /> */}
         {image && (
           <GatsbyImage
             image={getImage(image.localFile)}

@@ -436,9 +436,10 @@ Hero
   background: var(--clr-grey-2);
 }
 .hero-img {
-  display: none;
+  /* display: none; */
   border-radius: 30px;
   border: 1px solid#585858;
+  z-index: 100;
 }
 .hero-info h1 {
   color: var(--clr-white);
