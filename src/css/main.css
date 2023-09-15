@@ -706,6 +706,19 @@ Jobs
 .job-icon {
   color: var(--clr-red-3);
 }
+
+@media screen and (max-width: 540px) {
+  .job-btn {
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+}  
+@media screen and (min-width: 541px) and (max-width: 991px) {
+  .job-btn {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+}
 @media screen and (min-width: 992px) {
   .jobs-center {
     width: 90vw;
