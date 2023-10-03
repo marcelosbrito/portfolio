@@ -10,7 +10,7 @@ const data = [
   {
     id: 2,
     icon: <FaLinkedin className="social-icon"></FaLinkedin>,
-    url: "https://www.linkedin.com/in/marcelo-brito-23096733/",
+    url: "https://www.linkedin.com/in/marcelosbrito/",
   },
   {
     id: 3,
