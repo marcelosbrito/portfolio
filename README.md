@@ -1,21 +1,23 @@
-## Setup Notes
+# 🧠 About
 
-1. All components ready to go (including imports)
-2. Use main.css - less imports
-3. Limit amount of components - better overview
-4. React Icons
+Welcome! This respostitory contains my [Portfolio website](https://marcelobrito.web.app/) open source.
 
-[react icons] https://react-icons.github.io/react-icons/
+![Prototype](https://github.com/marcelosbrito/portfolio/blob/main/static/twitter-img.png?raw=true)
 
-```javascript
-import { FaHome } from "react-icons/fa"
-const Component = () => {
-  return <FaHome className="icon"></FaHome>
-}
-```
+The project have the following functionalities:
 
-## How to access
+- [x] Hero section
+- [x] About / Skills page
+- [x] Featured projects / project page
+- [x] Articles
 
-Firebase live host address:
+## 📋 Tech Stack
+
+- React
+- Gatsby
+- **GraphQL API** and Strapi content manager.
+- Firebase live host
+
+## 🔗 How To Access
 
 https://marcelobrito.web.app/
