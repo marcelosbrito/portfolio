@@ -32,7 +32,7 @@ export const Head = () => (
 
 export const query = graphql`
   query {
-    allStrapiProject(filter: { feature: { eq: true } }) {
+    allStrapiProject(sort: { title: ASC }, filter: { feature: { eq: true } }) {
       nodes {
         id
         description
