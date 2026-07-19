@@ -3,13 +3,14 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Blog = ({ id, title, image, date, category, slug, desc }) => {
-  const imageUrl = image?.localFile?.relativePath || ""
+  const strapiURL = "http://127.0.0.1:1337"
+  const imageUrl = image?.url && !image.url.startsWith("http") ? `${strapiURL}${image.url}` : image?.url
 
   return (
     <Link to={`/blogs/${slug}`} key={id} className="blog">
       <article>
-        {image?.localFile && (
-          <img src={`/${imageUrl}`} className="blog-img" alt={title} />
+        {image?.url && (
+          <img src={imageUrl} className="blog-img" alt={title} />
         )}
         <div className="blog-card">
           <h4>{title}</h4>

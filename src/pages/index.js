@@ -57,9 +57,7 @@ export const query = graphql`
         desc
         category
         image {
-          localFile {
-            relativePath
-          }
+          url
         }
       }
     }

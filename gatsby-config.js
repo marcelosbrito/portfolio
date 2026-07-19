@@ -34,7 +34,7 @@ const strapiConfig = {
       queryParams: { populate: "*" },
     },
   ],
-  skipFileDownloads: false,
+  skipFileDownloads: true,
 }
 
 module.exports = {
