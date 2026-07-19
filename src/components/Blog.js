@@ -3,8 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Blog = ({ id, title, image, date, category, slug, desc }) => {
-  const strapiURL = "http://127.0.0.1:1337"
-  const imageUrl = image?.url && !image.url.startsWith("http") ? `${strapiURL}${image.url}` : image?.url
+  const imageUrl = image?.url || ""
 
   return (
     <Link to={`/blogs/${slug}`} key={id} className="blog">
