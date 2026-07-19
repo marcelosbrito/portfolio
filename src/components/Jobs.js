@@ -27,6 +27,9 @@ const Jobs = () => {
     allStrapiJob: { nodes: jobs },
   } = data
   const [value, setValue] = React.useState(0)
+
+  if (!jobs || jobs.length === 0) return null
+  
   const { company, position, date, desc } = jobs[value]
 
   return (

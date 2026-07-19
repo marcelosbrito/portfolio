@@ -32,7 +32,7 @@ export const Head = () => (
 
 export const query = graphql`
   query {
-    allStrapiProject(sort: { id: DESC }, filter: { feature: { eq: true } }) {
+    allStrapiProject(sort: { id: ASC }, filter: { feature: { eq: true } }) {
       nodes {
         id
         description
@@ -40,11 +40,7 @@ export const query = graphql`
         url
         github
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
+          url
         }
         stack {
           id
@@ -55,23 +51,13 @@ export const query = graphql`
     allStrapiBlog(sort: { date: DESC }, limit: 3) {
       nodes {
         slug
-        content {
-          data {
-            id
-            content
-          }
-        }
         title
         date(formatString: "MMMM Do, YYYY")
         id
         desc
         category
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
+          url
         }
       }
     }

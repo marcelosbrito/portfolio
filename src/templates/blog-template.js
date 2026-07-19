@@ -6,12 +6,13 @@ import SEO from "../components/SEO"
 
 const ComponentName = ({ data }) => {
   const { content } = data.blog
+  const markdownContent = content?.data?.content ?? ''
   return (
     <Layout>
       <section className="blog-template">
         <div className="section-center">
           <article className="blog-content">
-            <ReactMarkdown children={content.data.content} />
+            <ReactMarkdown>{markdownContent}</ReactMarkdown>
           </article>
           <Link to="/blog" className="btn center-btn">
             back
@@ -22,19 +23,14 @@ const ComponentName = ({ data }) => {
   )
 }
 
-export const Head = ({ data }) => {
-  const { title, desc } = data.blog
-  return <SEO title={title} description={desc} />
-}
-
 export const query = graphql`
   query GetSingleBlog($slug: String) {
     blog: strapiBlog(slug: { eq: $slug }) {
       content {
-        data {
-          content
-        }
+      data {
+        content
       }
+    }
       title
       desc
     }

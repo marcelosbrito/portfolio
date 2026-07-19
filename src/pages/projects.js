@@ -32,11 +32,7 @@ export const query = graphql`
         url
         github
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
+          url
         }
         stack {
           id

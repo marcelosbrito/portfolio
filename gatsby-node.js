@@ -1,8 +1,8 @@
 const path = require("path")
 
-// create pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+
   const result = await graphql(`
     {
       blogs: allStrapiBlog {
@@ -13,13 +13,17 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  result.data.blogs.nodes.forEach(blog => {
+  if (result.errors) {
+    console.error("Erro no GraphQL:", result.errors)
+    return
+  }
+
+  result.data?.blogs?.nodes?.forEach(blog => {
+    if (!blog.slug) return
     createPage({
       path: `/blogs/${blog.slug}`,
       component: path.resolve(`src/templates/blog-template.js`),
-      context: {
-        slug: blog.slug,
-      },
+      context: { slug: blog.slug },
     })
   })
 }

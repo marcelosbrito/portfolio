@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
+    "postinstall": "patch-package",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
@@ -14,23 +15,25 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "^5.11.0",
-    "gatsby-plugin-image": "^3.11.0",
+    "ajv": "^8.20.0",
+    "gatsby": "^5.16.1",
+    "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
-    "gatsby-plugin-sharp": "^5.11.0",
-    "gatsby-plugin-sitemap": "^6.11.0",
+    "gatsby-plugin-sharp": "^5.16.0",
+    "gatsby-plugin-sitemap": "^6.16.0",
     "gatsby-plugin-webfonts": "^2.3.2",
-    "gatsby-source-filesystem": "^5.11.0",
-    "gatsby-source-strapi": "3.3.1",
-    "gatsby-transformer-sharp": "^5.11.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "gatsby-source-filesystem": "^5.16.0",
+    "gatsby-source-strapi": "^3.1.4",
+    "gatsby-transformer-sharp": "^5.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-icons": "^4.10.1",
-    "react-markdown": "^8.0.7"
+    "react-icons": "^5.6.0",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
-    "prettier": "3.0.3"
+    "patch-package": "^8.0.1",
+    "prettier": "3.8.2"
   },
   "repository": {
     "type": "git",

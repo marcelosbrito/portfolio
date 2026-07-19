@@ -1,9 +1,6 @@
 import React from "react"
 import Title from "./Title"
-// import { FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-// import img from "../assets/code.png"
 import { Link } from "gatsby"
 
 const query = graphql`
@@ -18,11 +15,7 @@ const query = graphql`
           title
         }
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
+          url
         }
       }
     }
@@ -31,29 +24,30 @@ const query = graphql`
 
 const Skills = () => {
   const data = useStaticQuery(query)
-
   const {
     about: { nodes: about },
   } = data
-
   const { title, subtitle, image, info, stack } = about[0]
+
+  const strapiURL = process.env.GATSBY_STRAPI_API_URL || "http://localhost:1337"
+  const imageUrl = image?.url?.startsWith("http") ? image.url : `http://localhost:1337${image.url}`
 
   return (
     <section className="about-page">
       <div className="section-center about-center">
-        {/* <img src={img} className="about-img" /> */}
-        {image && (
-          <GatsbyImage
-            image={getImage(image.localFile)}
+        {image?.url && (
+          <img
+            src={imageUrl}
+            alt={image.alternativeText || title}
             className="about-img"
           />
         )}
         <article className="about-text">
           <Title title={title} />
           <div className="about-stack">
-            {stack.map(item => {
-              return <span key={item.id}>{item.title}</span>
-            })}
+            {stack.map(item => (
+              <span key={item.id}>{item.title}</span>
+            ))}
           </div>
           <p className="about-subtitle">{subtitle}</p>
           <p>{info}</p>

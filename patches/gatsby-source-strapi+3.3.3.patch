@@ -1,0 +1,43 @@
+diff --git a/node_modules/gatsby-source-strapi/dist/normalize.js b/node_modules/gatsby-source-strapi/dist/normalize.js
+index e11442c..3f8eabf 100644
+--- a/node_modules/gatsby-source-strapi/dist/normalize.js
++++ b/node_modules/gatsby-source-strapi/dist/normalize.js
+@@ -97,11 +97,11 @@ const prepareTextNode = (text, context) => {
+     children: [],
+     [attributeName]: text,
+     internal: {
+-      type: (0, _toUpper2.default)(`${parentNode.internal.type}_${attributeName}_TextNode`),
+-      mediaType: `text/markdown`,
+-      content: text,
+-      contentDigest: createContentDigest(text)
+-    }
++    type: (0, _toUpper2.default)(`${parentNode.internal.type}_${attributeName}_TextNode`),
++    mediaType: `text/markdown`,
++    content: text ?? '',
++    contentDigest: createContentDigest(text ?? '')
++  },
+   };
+   return textNode;
+ };
+@@ -249,14 +249,18 @@ const createNodes = (entity, context, uid) => {
+ 
+       // Create nodes for richtext in order to make the markdown-remark plugin works
+       if (type === "richtext") {
+-        const textNode = prepareTextNode(value.data, {
++        const textNode = prepareTextNode(typeof value === 'string' ? value : (value?.data ?? ''), {
+           createContentDigest,
+           createNodeId,
+           parentNode: entryNode,
+           attributeName
+         });
+-        entity[attributeName][`data___NODE`] = textNode.id;
+-        delete entity[attributeName].data;
++        if (typeof entity[attributeName] === 'object' && entity[attributeName] !== null) {
++          entity[attributeName][`data___NODE`] = textNode.id;
++          delete entity[attributeName].data;
++        } else {
++          entity[attributeName] = { [`data___NODE`]: textNode.id };
++        }
+         nodes.push(textNode);
+       }
+ 

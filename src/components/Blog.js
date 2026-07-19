@@ -1,13 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+
 const Blog = ({ id, title, image, date, category, slug, desc }) => {
+  const strapiURL = process.env.GATSBY_STRAPI_API_URL || "http://localhost:1337"
+  const imageUrl = image?.url?.startsWith("http") ? image.url : `${strapiURL}${image.url}`
+
   return (
     <Link to={`/blogs/${slug}`} key={id} className="blog">
       <article>
-        {image && (
-          <GatsbyImage image={getImage(image.localFile)} className="blog-img" />
+        {image?.url && (
+          <img src={imageUrl} className="blog-img" alt={title} />
         )}
         <div className="blog-card">
           <h4>{title}</h4>
@@ -29,7 +32,6 @@ Blog.propTypes = {
   category: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
 }
 
 export default Blog

@@ -19,7 +19,7 @@ const Blog = ({
 
 export const query = graphql`
   query {
-    allStrapiBlog(sort: { date: DESC }, limit: 3) {
+    allStrapiBlog(sort: { date: DESC }) {
       nodes {
         slug
         title
@@ -28,11 +28,7 @@ export const query = graphql`
         desc
         category
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
+          url
         }
       }
     }
