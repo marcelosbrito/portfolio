@@ -58,6 +58,8 @@ export const query = graphql`
         category
         image {
           url
+          hash
+          ext
         }
       }
     }
