@@ -3,18 +3,21 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Blog = ({ id, title, image, date, category, slug, desc }) => {
-  const strapiURL = process.env.GATSBY_STRAPI_API_URL || "http://localhost:1337"
     
-    const getImageUrl = (image) => {
-      if (!image) return null
-      // tenta thumbnail do Cloudinary primeiro
-      const thumbnail = image.formats?.thumbnail?.url || image.formats?.small?.url
-      if (thumbnail?.startsWith("http")) return thumbnail
-      // fallback para url principal
-      if (image.url?.startsWith("http")) return image.url
-      // url relativa (servidor local)
-      return `${strapiURL}${image.url}`
-    }
+const getImageUrl = (image) => {
+  if (!image) return null
+  
+  // thumbnail já tem URL completa (Cloudinary ou local)
+  const thumbnail = image.formats?.thumbnail?.url || image.formats?.small?.url
+  if (thumbnail?.startsWith("http")) return thumbnail
+  
+  // url principal absoluta
+  if (image.url?.startsWith("http")) return image.url
+  
+  // url relativa — só em dev
+  if (typeof window !== "undefined" && window.location.hostname !== "localhost") return null
+  return `http://localhost:1337${image.url}`
+}
 
   const imageUrl = getImageUrl(image)
 
@@ -36,6 +39,7 @@ const Blog = ({ id, title, image, date, category, slug, desc }) => {
     </Link>
   )
 }
+
 
 Blog.propTypes = {
   id: PropTypes.string.isRequired,

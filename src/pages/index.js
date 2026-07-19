@@ -58,8 +58,19 @@ export const query = graphql`
         category
         image {
           url
-          hash
-          ext
+          provider
+          provider_metadata {
+            public_id
+            resource_type
+          }
+          formats {
+            thumbnail {
+              url
+            }
+            small {
+              url
+            }
+          }
         }
       }
     }

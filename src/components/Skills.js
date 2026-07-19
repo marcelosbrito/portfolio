@@ -29,7 +29,6 @@ const Skills = () => {
   } = data
   const { title, subtitle, image, info, stack } = about[0]
 
-  const strapiURL = process.env.GATSBY_STRAPI_API_URL || "http://localhost:1337"
   const imageUrl = image?.url?.startsWith("http") ? image.url : `http://localhost:1337${image.url}`
 
   return (
