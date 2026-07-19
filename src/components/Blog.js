@@ -3,7 +3,14 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Blog = ({ id, title, image, date, category, slug, desc }) => {
-  const imageUrl = image?.url || ""
+  const cloudinaryBase = "https://res.cloudinary.com/dgavhp6sc/image/upload/"
+  let imageUrl = image?.url || ""
+
+  if (imageUrl && !imageUrl.startsWith("http")) {
+    const hash = image?.hash || imageUrl.split("/").pop()?.replace(/\.\w+$/, "")
+    const ext = image?.ext || ".jpg"
+    imageUrl = `${cloudinaryBase}${hash}${ext}`
+  }
 
   return (
     <Link to={`/blogs/${slug}`} key={id} className="blog">
