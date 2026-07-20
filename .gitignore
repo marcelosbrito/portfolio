@@ -70,3 +70,6 @@ yarn-error.log
 
 # strapi api
 portfolio-api/
+
+# opencode config
+.opencode/
